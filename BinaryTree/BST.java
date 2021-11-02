@@ -62,8 +62,7 @@ public class BST {
     }
 
     private int height(Node root) {
-        // return root.leftChild ==null && root.rightChild ==null ? 0 :
-        // 1 + Math.max(height(root.leftChild),height(root.rightChild));
+       
         if (root == null)
             return 0;
         return 1 + Math.max(height(root.leftChild), height(root.rightChild));
