@@ -69,7 +69,4 @@ public class BST {
     }
 }
 
-/*
- * Extras if(root.lc==null || root.rc==null) return 0; return 1 +
- * Math.max(height(root.lc),height(root.rc));
- */
+
