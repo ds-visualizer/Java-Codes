@@ -9,9 +9,9 @@ class Heap {
       return true;
 
     if (!hasRightChild(index))
-      return heap.get(index) > leftChild(index);
+      return heap.get(index) >= leftChild(index);
 
-    return (heap.get(index) > leftChild(index) && heap.get(index) > rightChild(index));
+    return (heap.get(index) >= leftChild(index) && heap.get(index) >= rightChild(index));
   }
 
   private int leftChild(int index) {
