@@ -79,6 +79,21 @@ public class HashMap<T, E> {
 
   }
 
+  E get(T key) {
+
+    LinkedList<Entry> entries = map[hash(key)];
+
+    if (entries == null)
+      return null;
+
+    Entry entry = getEntry(key, entries);
+
+    if (entry == null)
+      return null;
+
+    return entry.value;
+  }
+
   boolean contain(T key) {
     LinkedList<Entry> entries = map[hash(key)];
 
