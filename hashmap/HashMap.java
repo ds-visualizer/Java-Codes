@@ -57,8 +57,10 @@ public class HashMap<T, E> {
 
     Entry entry = getEntry(key, entries);
 
-    if (entry != null)
+    if (entry != null){
+      entry.value = value;
       return;
+    }
 
     entries.add(new Entry(key, value));
   }
@@ -80,7 +82,6 @@ public class HashMap<T, E> {
   }
 
   E get(T key) {
-
     LinkedList<Entry> entries = map[hash(key)];
 
     if (entries == null)
