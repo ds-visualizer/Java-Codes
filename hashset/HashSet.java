@@ -1,11 +1,11 @@
 import java.util.*;
 
-class HashSet<T> {
+class HashSet{
 
   class Entry {
-    T key;
+    Integer key;
 
-    Entry(T key) {
+    Entry(Integer key) {
       this.key = key;
     }
 
@@ -13,12 +13,12 @@ class HashSet<T> {
 
   private LinkedList<Entry>[] set = new LinkedList[10];
 
-  private int hash(T key) {
+  private int hash(Integer key) {
 
-    return key.hashCode() % set.length;
+    return key % set.length;
   }
 
-  private Entry getEntry(T key, LinkedList<Entry> entries) {
+  private Entry getEntry(Integer key, LinkedList<Entry> entries) {
 
     for (Entry entry : entries) {
       if (entry.key.equals(key))
@@ -28,7 +28,7 @@ class HashSet<T> {
     return null;
   }
 
-  void add(T key) {
+  void add(Integer key) {
     int hash = hash(key);
     LinkedList<Entry> entries = set[hash];
 
@@ -47,7 +47,7 @@ class HashSet<T> {
     entries.add(new Entry(key));
   }
 
-  void remove(T key) {
+  void remove(Integer key) {
     int hash = hash(key);
     LinkedList<Entry> entries = set[hash];
 
@@ -62,7 +62,7 @@ class HashSet<T> {
     entries.remove(entry);
   }
 
-  boolean has(T key) {
+  boolean has(Integer key) {
     int hash = hash(key);
     LinkedList<Entry> entries = set[hash];
 

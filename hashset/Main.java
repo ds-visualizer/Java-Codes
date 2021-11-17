@@ -1,12 +1,12 @@
 class Main {
 
   public static void main(String[] args) {
-    var set = new HashSet<String>();
+    var set = new HashSet();
 
-    set.add("a");
-    System.out.println(set.has("a"));
-    set.remove("a");
-    System.out.println(set.has("a"));
+    set.add(10);
+    System.out.println(set.has(10));
+    set.remove(10);
+    System.out.println(set.has(10));
 
   }
 }
